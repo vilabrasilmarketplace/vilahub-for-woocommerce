@@ -4,7 +4,7 @@
 
 Plugin oficial de código aberto para conectar uma loja WooCommerce ao serviço de integração VilaHub.
 
-[Instalar pelo WordPress.org](https://wordpress.org/plugins/vilahub-for-woocommerce/) · [VilaHub](https://vilahub.com.br) · [Suporte](https://wordpress.org/support/plugin/vilahub-for-woocommerce/)
+[Instalar pelo WordPress.org](https://wordpress.org/plugins/vilahub-for-woocommerce/) · [Pacote no WPackagist](https://wpackagist.org/search?q=vilahub-for-woocommerce) · [VilaHub](https://vilahub.com.br) · [Suporte](https://wordpress.org/support/plugin/vilahub-for-woocommerce/)
 
 ## O que o plugin faz
 
@@ -45,6 +45,18 @@ Depois da ativação:
 
 Não ative uma segunda cópia em outra pasta de plugin na mesma loja.
 
+## Instalação por Composer
+
+Para projetos WordPress gerenciados com Composer e WPackagist:
+
+```bash
+composer config repositories.wpackagist composer https://repo.wpackagist.org
+composer require composer/installers
+composer require wpackagist-plugin/vilahub-for-woocommerce:^1.0
+```
+
+O WPackagist espelha a versão estável publicada no WordPress.org.
+
 ## Veja o plugin
 
 ### Tela inicial
@@ -74,6 +86,7 @@ Não ative uma segunda cópia em outra pasta de plugin na mesma loja.
 ## Código e versões
 
 - WordPress.org SVN: https://plugins.svn.wordpress.org/vilahub-for-woocommerce/
+- WPackagist: https://wpackagist.org/search?q=vilahub-for-woocommerce
 - Releases do GitHub: https://github.com/vilabrasilmarketplace/vilahub-for-woocommerce/releases
 - Projeto de tradução: https://translate.wordpress.org/projects/wp-plugins/vilahub-for-woocommerce/
 - Documentação da API: https://vilahub.com.br/api/v1/docs
