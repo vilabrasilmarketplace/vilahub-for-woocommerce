@@ -10,7 +10,7 @@ Plugin oficial de código aberto para conectar uma loja WooCommerce ao serviço 
 
 [Kit de imprensa e parcerias](https://github.com/vilabrasilmarketplace/vilahub-for-woocommerce/releases/download/v1.0.3/VilaHub-WooCommerce-Press-Kit-1.0.3.zip)
 
-[Suporte](SUPPORT.md) · [Política de segurança](SECURITY.md) · [Changelog](CHANGELOG.md)
+[Suporte](SUPPORT.md) · [Política de segurança](SECURITY.md) · [Changelog](CHANGELOG.md) · [Verificação da versão](VERIFICATION.md)
 
 ## O que o plugin faz
 
