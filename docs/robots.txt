@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vilabrasilmarketplace.github.io/vilahub-for-woocommerce/sitemap.xml
