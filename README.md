@@ -1,62 +1,84 @@
-# VilaHub for WooCommerce
+# VilaHub para WooCommerce
 
-Official open-source WooCommerce plugin for the VilaHub marketplace integration service.
+![Plugin oficial VilaHub para WooCommerce](docs/assets/banner.png)
 
-[WordPress.org plugin page](https://wordpress.org/plugins/vilahub-for-woocommerce/) · [VilaHub](https://vilahub.com.br) · [Support](https://wordpress.org/support/plugin/vilahub-for-woocommerce/)
+Plugin oficial de código aberto para conectar uma loja WooCommerce ao serviço de integração VilaHub.
 
-## What it does
+[Instalar pelo WordPress.org](https://wordpress.org/plugins/vilahub-for-woocommerce/) · [VilaHub](https://vilahub.com.br) · [Suporte](https://wordpress.org/support/plugin/vilahub-for-woocommerce/)
 
-VilaHub for WooCommerce connects a WooCommerce store to the external VilaHub service. It provides:
+## O que o plugin faz
 
-- store authorization with OAuth and PKCE;
-- marketplace account selection;
-- reviewed product and variation transmission;
-- supported price and inventory synchronization;
-- publication results and correction flows;
-- separate marketplace order records and administration screens;
-- WooCommerce or external ERP inventory authority;
-- HPOS and legacy WooCommerce storage compatibility.
+O WooCommerce continua sendo a loja e pode ser a origem do catálogo. O plugin adiciona o fluxo de autorização e operação de marketplaces:
 
-The store can remain the source of catalog data. Each installation is bound to the authorized company, credentials, and store URL.
+- autorização da loja com OAuth e PKCE;
+- seleção explícita da conta de marketplace;
+- envio de produtos e variações com revisão;
+- atualização de preço e estoque quando suportada pelo canal;
+- acompanhamento de resultados e correções de publicação;
+- tela separada para pedidos de marketplaces;
+- escolha entre WooCommerce e ERP externo como autoridade de estoque;
+- compatibilidade com HPOS e armazenamento legado.
 
-## Requirements
+Cada instalação fica vinculada à empresa, às credenciais e à URL da loja autorizadas.
 
-- WordPress 6.5 or later
-- WooCommerce 9.0 or later
-- PHP 8.1 or later
-- OpenSSL
-- HTTPS
-- VilaHub account
+## Requisitos
 
-## Installation
+- WordPress 6.5 ou superior;
+- WooCommerce 9.0 ou superior;
+- PHP 8.1 ou superior;
+- OpenSSL;
+- HTTPS;
+- conta VilaHub.
 
-Install from the official WordPress plugin directory:
+## Instalação
+
+Instale pelo diretório oficial:
 
 https://wordpress.org/plugins/vilahub-for-woocommerce/
 
-After activation:
+Depois da ativação:
 
-1. Open `VilaHub > Início`.
-2. Authorize the store in VilaHub.
-3. Connect a supported marketplace account.
-4. Review one controlled product before enabling catalog synchronization.
+1. Abra `VilaHub > Início`.
+2. Autorize a loja no serviço VilaHub.
+3. Conecte uma conta de marketplace compatível.
+4. Revise um produto controlado antes de ampliar a sincronização.
 
-Do not activate a second copy under a different plugin directory on the same store.
+Não ative uma segunda cópia em outra pasta de plugin na mesma loja.
 
-## Important boundaries
+## Veja o plugin
 
-- VilaHub capabilities depend on the provider and account.
-- The marketplace makes the final decision about a publication.
-- Fiscal and shipping operations require channel support, configuration, and user confirmation.
-- Native WooCommerce orders are not uploaded by the marketplace-order integration.
+### Tela inicial
 
-## Source and releases
+![Tela inicial do plugin VilaHub no WordPress](docs/assets/plugin-home.png)
+
+### Produtos e destino de envio
+
+![Produtos WooCommerce com o seletor de destino VilaHub](docs/assets/plugin-products.png)
+
+### Conexão de canais
+
+![Tela de conexão de marketplace no serviço VilaHub](docs/assets/plugin-channels.png)
+
+### Pedidos de marketplaces
+
+![Tela separada de pedidos de marketplaces](docs/assets/plugin-orders.png)
+
+## Limites importantes
+
+- Os recursos dependem do provedor, da conta e do plano.
+- O marketplace toma a decisão final sobre uma publicação.
+- Operações fiscais e de expedição exigem suporte do canal, configuração e confirmação do usuário.
+- Pedidos nativos do WooCommerce não são enviados pela integração de pedidos de marketplaces.
+- A recepção de pedidos não emite nota fiscal nem baixa estoque automaticamente sem a configuração e a confirmação aplicáveis.
+
+## Código e versões
 
 - WordPress.org SVN: https://plugins.svn.wordpress.org/vilahub-for-woocommerce/
-- GitHub releases: https://github.com/vilabrasilmarketplace/vilahub-for-woocommerce/releases
-- Translation project: https://translate.wordpress.org/projects/wp-plugins/vilahub-for-woocommerce/
+- Releases do GitHub: https://github.com/vilabrasilmarketplace/vilahub-for-woocommerce/releases
+- Projeto de tradução: https://translate.wordpress.org/projects/wp-plugins/vilahub-for-woocommerce/
+- Documentação da API: https://vilahub.com.br/api/v1/docs
 
-## License
+## Licença
 
 GPL-2.0-or-later.
 
