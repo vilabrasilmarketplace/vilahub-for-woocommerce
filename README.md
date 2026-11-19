@@ -50,7 +50,7 @@ Não ative uma segunda cópia em outra pasta de plugin na mesma loja.
 Para projetos WordPress gerenciados com Composer e WPackagist:
 
 ```bash
-composer config repositories.wpackagist composer https://repo.wpackagist.org
+composer config repositories.wpackagist composer https://wpackagist.org
 composer require composer/installers
 composer require wpackagist-plugin/vilahub-for-woocommerce:^1.0
 ```
