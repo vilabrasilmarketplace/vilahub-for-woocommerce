@@ -8,7 +8,7 @@ Plugin oficial de código aberto para conectar uma loja WooCommerce ao serviço 
 
 [Página pública do plugin](https://vilabrasilmarketplace.github.io/vilahub-for-woocommerce/)
 
-[Testar no WordPress Playground](https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fvilabrasilmarketplace.github.io%2Fvilahub-for-woocommerce%2Fblueprint.json)
+[Testar no WordPress Playground](https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fvilabrasilmarketplace.github.io%2Fvilahub-for-woocommerce%2Fblueprint.json%3Fv%3D20261119)
 
 [Kit de imprensa e parcerias](https://github.com/vilabrasilmarketplace/vilahub-for-woocommerce/releases/download/v1.0.3/VilaHub-WooCommerce-Press-Kit-1.0.3.zip)
 
