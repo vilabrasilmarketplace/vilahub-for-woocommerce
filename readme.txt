@@ -4,7 +4,7 @@ Tags: integração, mercado livre, shopee, magalu, amazon
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -112,6 +112,10 @@ Definir `VILAHUB_DELETE_DATA_ON_UNINSTALL` como `true` no `wp-config.php` exclui
 4. Tela separada de pedidos de marketplaces com colunas de integração, status, fiscal, estoque e total.
 
 == Changelog ==
+
+= 1.0.3 =
+* Publica a apresentação do plugin no diretório em português do Brasil.
+* Mantém o mesmo comportamento funcional da versão 1.0.2.
 
 = 1.0.2 =
 * Adiciona o banner oficial, o banner em alta resolução e capturas reais da administração.
