@@ -181,16 +181,53 @@ composer require wpackagist-plugin/vilahub-for-woocommerce:^1.0</code></pre>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "VilaHub for WooCommerce",
-        "softwareVersion": "1.0.3",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "WordPress",
-        "downloadUrl": "https://wordpress.org/plugins/vilahub-for-woocommerce/",
-        "isAccessibleForFree": true,
-        "license": "https://www.gnu.org/licenses/gpl-2.0.html",
-        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"},
-        "softwareRequirements": "WordPress 6.5+, WooCommerce 9.0+, PHP 8.1+, HTTPS e conta VilaHub."
+        "@graph": [
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://vilabrasilmarketplace.github.io/vilahub-for-woocommerce/#software",
+            "name": "VilaHub for WooCommerce",
+            "alternateName": "VilaHub para WooCommerce",
+            "softwareVersion": "1.0.3",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "WordPress",
+            "downloadUrl": "https://wordpress.org/plugins/vilahub-for-woocommerce/",
+            "isAccessibleForFree": true,
+            "license": "https://www.gnu.org/licenses/gpl-2.0.html",
+            "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"},
+            "softwareRequirements": "WordPress 6.5+, WooCommerce 9.0+, PHP 8.1+, HTTPS e conta VilaHub."
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://vilabrasilmarketplace.github.io/vilahub-for-woocommerce/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "O plugin substitui o WooCommerce?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Não. O WooCommerce continua sendo a loja. O plugin conecta a instalação ao serviço VilaHub para as operações de marketplace."}
+              },
+              {
+                "@type": "Question",
+                "name": "Funciona sem uma conta VilaHub?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Não para as operações de marketplace. O plugin é um cliente do serviço externo."}
+              },
+              {
+                "@type": "Question",
+                "name": "A publicação é automática?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Não. O envio exige revisão e confirmação explícita. A aprovação final pertence ao marketplace."}
+              },
+              {
+                "@type": "Question",
+                "name": "O que acontece com os pedidos?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Pedidos de marketplaces ficam em uma tela própria e não viram pedidos nativos do WooCommerce."}
+              },
+              {
+                "@type": "Question",
+                "name": "Emissão fiscal é automática?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Não. Documentos fiscais dependem do canal, da configuração e de uma ação específica de revisão."}
+              }
+            ]
+          }
+        ]
       }
     </script>
   </body>
