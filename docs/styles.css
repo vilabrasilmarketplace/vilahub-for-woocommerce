@@ -69,6 +69,7 @@ h1 { max-width: 680px; margin: 18px 0 22px; font-family: Georgia, "Times New Rom
 .actions.centered { justify-content: center; }
 .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
 .badges span, .channel-list span { padding: 8px 12px; color: #075c50; background: #e9f8f3; border: 1px solid #cbece2; border-radius: 999px; font-size: 12px; font-weight: 800; }
+.playground-note { max-width: 650px; margin: 16px 0 0; padding-left: 12px; color: #688095; border-left: 3px solid #58cec5; font-size: 12px; line-height: 1.6; }
 .hero-shot { margin: 0; padding: 12px; background: linear-gradient(145deg, #08355d, #087778); border-radius: 24px; box-shadow: 0 28px 70px rgba(7, 49, 85, .22); transform: rotate(1.3deg); }
 .hero-shot img { display: block; border-radius: 12px; }
 .hero-shot figcaption { padding: 13px 8px 2px; color: #d6f2ef; font-size: 12px; }
