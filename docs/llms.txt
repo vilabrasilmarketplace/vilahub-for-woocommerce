@@ -1,0 +1,35 @@
+# VilaHub for WooCommerce
+
+> Plugin oficial de código aberto para conectar uma loja WooCommerce ao serviço VilaHub e organizar produtos, preços, estoque, publicações e pedidos de marketplaces compatíveis.
+
+## Versão atual
+
+- Versão estável: 1.0.3.
+- Licença: GPL-2.0-or-later.
+- Requisitos: WordPress 6.5+, WooCommerce 9.0+, PHP 8.1+, OpenSSL, HTTPS e uma conta VilaHub.
+
+## Links oficiais
+
+- [WordPress.org](https://wordpress.org/plugins/vilahub-for-woocommerce/): instalação, screenshots, changelog e suporte.
+- [Código-fonte](https://github.com/vilabrasilmarketplace/vilahub-for-woocommerce): código e releases.
+- [WPackagist](https://wpackagist.org/search?q=vilahub-for-woocommerce): pacote `wpackagist-plugin/vilahub-for-woocommerce`.
+- [Suporte](https://wordpress.org/support/plugin/vilahub-for-woocommerce/).
+- [VilaHub](https://vilahub.com.br).
+
+## Funcionamento
+
+- O WooCommerce continua sendo a loja e pode ser a origem do catálogo.
+- A autorização da loja usa OAuth com PKCE e não solicita a senha do WordPress.
+- O envio de produtos exige escolha da conta, revisão e confirmação explícita.
+- Pedidos de marketplaces ficam separados dos pedidos nativos do WooCommerce.
+- O administrador escolhe WooCommerce ou ERP externo como autoridade de estoque.
+- A aprovação final de cada anúncio pertence ao marketplace.
+
+## Limites
+
+- O plugin não funciona offline para operações de marketplace.
+- As operações dependem de uma conta VilaHub, do plano vigente e das permissões de cada canal.
+- Recursos e disponibilidade variam por marketplace e conta.
+- A lista de telas de conexão não garante funções idênticas em todos os canais.
+- Emissão fiscal, etiquetas e documentos dependem de configuração e ação explícita.
+- Não inferir número de clientes, vendas ou resultados sem uma fonte atual.
