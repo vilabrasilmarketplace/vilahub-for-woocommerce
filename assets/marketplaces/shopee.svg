@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" role="img" aria-labelledby="title">
+  <title id="title">Shopee</title>
+  <g fill="#ee4d2d">
+    <path d="M9 18h42l-3 39H12L9 18Zm10 0C19 8 24 3 30 3s11 5 11 15h-6c0-6-2-9-5-9s-5 3-5 9h-6Z"/>
+    <path d="M31 27c-5 0-8 2-8 5 0 7 16 4 16 14 0 6-5 9-12 9-5 0-9-1-12-4l3-5c3 2 6 4 10 4 3 0 5-1 5-3 0-5-16-3-16-14 0-6 5-10 13-10 4 0 8 1 11 3l-3 5c-2-2-5-4-7-4Z" fill="#fff"/>
+  </g>
+  <text x="61" y="47" fill="#ee4d2d" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700">Shopee</text>
+</svg>

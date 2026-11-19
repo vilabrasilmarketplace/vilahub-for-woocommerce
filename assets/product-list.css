@@ -1,0 +1,23 @@
+/* WooCommerce uses a fixed table layout. Reserve space for the added column
+   and let the product name take the remaining width instead of overflowing. */
+@media (min-width:783px){
+    body.post-type-product #posts-filter .tablenav.top{height:auto;min-height:32px;display:flow-root}
+    body.post-type-product #vilahub-product-tag{max-width:220px;margin-bottom:6px}
+    body.post-type-product #vilahub-destination{max-width:280px;margin-bottom:6px}
+    body.post-type-product #posts-filter .wp-list-table .column-vilahub{width:180px;white-space:normal;word-break:normal;overflow-wrap:break-word}
+    body.post-type-product #posts-filter .wp-list-table th.column-vilahub{white-space:nowrap}
+    body.post-type-product #posts-filter .wp-list-table .column-name{width:auto}
+    body.post-type-product #posts-filter .wp-list-table .column-price{width:100px;white-space:nowrap}
+    body.post-type-product #posts-filter .wp-list-table .column-price del,
+    body.post-type-product #posts-filter .wp-list-table .column-price ins{display:block}
+    body.post-type-product #posts-filter .wp-list-table .column-sku{width:110px}
+    body.post-type-product #posts-filter .wp-list-table .column-is_in_stock{width:80px}
+    body.post-type-product #posts-filter .wp-list-table .column-product_cat{width:11%}
+    body.post-type-product #posts-filter .wp-list-table .column-product_tag{width:9%}
+    body.post-type-product #posts-filter .wp-list-table .column-featured{width:26px}
+    body.post-type-product #posts-filter .wp-list-table .column-date{width:120px}
+}
+
+body.post-type-product .bulkactions select[id^="vilahub-destination"]{max-width:280px;margin:0 6px 0 0}body.post-type-product .bulkactions select[hidden]{display:none!important}
+
+.vilahub-restriction{padding:8px;margin:0 0 6px;border-left:3px solid;border-radius:3px;overflow-wrap:anywhere}.vilahub-restriction.is-blocked{background:#fff1f0;border-color:#b32d2e;color:#8a2424}.vilahub-restriction.is-warning{background:#fff8e5;border-color:#996800;color:#755000}.vilahub-restrictions{font-size:12px;line-height:1.5}.wp-list-table .column-vilahub{width:180px}
