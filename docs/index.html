@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Plugin VilaHub para WooCommerce | Integração com Marketplaces</title>
+    <meta name="description" content="Conheça o plugin oficial VilaHub para WooCommerce e organize produtos, preços, estoque, publicações e pedidos de marketplaces compatíveis.">
+    <meta name="theme-color" content="#082f56">
+    <link rel="canonical" href="https://vilabrasilmarketplace.github.io/vilahub-for-woocommerce/">
+    <meta property="og:title" content="Plugin VilaHub para WooCommerce">
+    <meta property="og:description" content="Conecte o catálogo da sua loja WooCommerce ao fluxo de marketplaces do VilaHub.">
+    <meta property="og:image" content="https://vilabrasilmarketplace.github.io/vilahub-for-woocommerce/assets/banner.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/vilahub-logo.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Página inicial do plugin VilaHub para WooCommerce">
+        <img src="assets/vilahub-logo.png" alt="VilaHub">
+        <span>VilaHub + WooCommerce</span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <a href="#funcionalidades">Funcionalidades</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#composer">Composer</a>
+        <a href="https://wordpress.org/support/plugin/vilahub-for-woocommerce/">Suporte</a>
+      </nav>
+      <a class="header-cta" href="https://wordpress.org/plugins/vilahub-for-woocommerce/?utm_source=github-pages&amp;utm_medium=owned&amp;utm_campaign=woocommerce-plugin-launch&amp;utm_content=header">Instalar</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">PLUGIN OFICIAL · VERSÃO 1.0.3</span>
+          <h1>Conecte sua loja WooCommerce aos marketplaces.</h1>
+          <p>Mantenha o catálogo na sua loja e use o plugin para revisar produtos, preços e estoque antes de enviar cada item a uma conta de marketplace escolhida explicitamente.</p>
+          <div class="actions">
+            <a class="button primary" href="https://wordpress.org/plugins/vilahub-for-woocommerce/?utm_source=github-pages&amp;utm_medium=owned&amp;utm_campaign=woocommerce-plugin-launch&amp;utm_content=hero">Instalar pelo WordPress.org</a>
+            <a class="button secondary" href="#como-funciona">Ver como funciona</a>
+          </div>
+          <div class="badges">
+            <span>Gratuito no diretório</span>
+            <span>Código aberto GPL</span>
+            <span>Interface em português</span>
+          </div>
+        </div>
+        <figure class="hero-shot">
+          <img src="assets/plugin-home.png" alt="Tela inicial do plugin VilaHub no painel do WordPress" width="1905" height="856">
+          <figcaption>O plugin dentro do painel do WordPress, ao lado do catálogo WooCommerce.</figcaption>
+        </figure>
+      </section>
+
+      <section class="requirements" aria-label="Requisitos">
+        <span><b>WordPress</b>6.5+</span>
+        <span><b>WooCommerce</b>9.0+</span>
+        <span><b>PHP</b>8.1+</span>
+        <span><b>Segurança</b>OAuth + PKCE</span>
+        <span><b>Licença</b>GPL</span>
+      </section>
+
+      <section class="section" id="funcionalidades">
+        <div class="section-heading">
+          <span class="eyebrow">SEM DUPLICAR O CATÁLOGO</span>
+          <h2>A loja continua WooCommerce. A operação ganha uma camada de marketplace.</h2>
+          <p>O plugin foi desenhado para lojas que já vendem ou estão prontas para expandir sem reconstruir o catálogo em cada canal.</p>
+        </div>
+        <div class="feature-grid">
+          <article><span>01</span><h3>Catálogo na loja</h3><p>Use produtos, variações, preços e estoque do WooCommerce como ponto de partida.</p></article>
+          <article><span>02</span><h3>Envio com revisão</h3><p>Escolha a conta, confira os dados e confirme o envio. A aprovação final é do marketplace.</p></article>
+          <article><span>03</span><h3>Pedidos separados</h3><p>Consulte pedidos dos canais compatíveis sem misturar com os pedidos nativos da loja.</p></article>
+          <article><span>04</span><h3>Estoque explícito</h3><p>Defina WooCommerce ou ERP externo como autoridade de estoque para evitar deduções no lugar errado.</p></article>
+        </div>
+      </section>
+
+      <section class="screens">
+        <figure>
+          <img src="assets/plugin-products.png" alt="Produtos do WooCommerce com o seletor de destino VilaHub" width="1905" height="856">
+          <figcaption><b>Produtos</b> Selecione uma amostra, confira o canal e acompanhe o resultado.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/plugin-orders.png" alt="Tela separada de pedidos de marketplaces" width="1905" height="856">
+          <figcaption><b>Pedidos</b> Operação de marketplace separada dos pedidos nativos do WooCommerce.</figcaption>
+        </figure>
+      </section>
+
+      <section class="process" id="como-funciona">
+        <div>
+          <span class="eyebrow light">DA INSTALAÇÃO AO PRIMEIRO ENVIO</span>
+          <h2>Comece pequeno e confirme cada etapa.</h2>
+          <p>O marketplace mantém a decisão final sobre o anúncio. Uma sincronização concluída não significa publicação aprovada.</p>
+          <a class="button bright" href="https://wordpress.org/plugins/vilahub-for-woocommerce/?utm_source=github-pages&amp;utm_medium=owned&amp;utm_campaign=woocommerce-plugin-launch&amp;utm_content=process">Abrir no WordPress.org</a>
+        </div>
+        <ol>
+          <li><span>1</span><div><b>Instale e ative</b><p>Adicione o plugin pelo diretório oficial e confirme os requisitos.</p></div></li>
+          <li><span>2</span><div><b>Autorize a loja</b><p>Use OAuth e PKCE sem compartilhar a senha do WordPress.</p></div></li>
+          <li><span>3</span><div><b>Conecte um canal</b><p>Autorize uma conta compatível com seu plano e operação.</p></div></li>
+          <li><span>4</span><div><b>Revise e confirme</b><p>Prepare uma amostra, confira preço e estoque e acompanhe o retorno.</p></div></li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <span class="eyebrow">CANAIS COM TELAS DE CONEXÃO</span>
+          <h2>Uma camada para organizar sua operação multicanal.</h2>
+          <p>Existem telas para Mercado Livre, Shopee, Magalu, Amazon, TikTok Shop, VilaBrasil, SHEIN, Netshoes, MadeiraMadeira, Americanas/SkyHub e Leroy Merlin. Recursos e disponibilidade variam por conta, plano, aprovação e regras do provedor.</p>
+        </div>
+        <div class="channel-list" aria-label="Marketplaces com telas de conexão">
+          <span>Mercado Livre</span><span>Shopee</span><span>Magalu</span><span>Amazon</span><span>TikTok Shop</span><span>VilaBrasil</span><span>SHEIN</span><span>Netshoes</span><span>MadeiraMadeira</span><span>Americanas/SkyHub</span><span>Leroy Merlin</span>
+        </div>
+      </section>
+
+      <section class="composer" id="composer">
+        <div>
+          <span class="eyebrow light">PARA PROJETOS WORDPRESS COM COMPOSER</span>
+          <h2>Disponível também pelo WPackagist.</h2>
+          <p>O pacote oficial está disponível para projetos que gerenciam dependências com Composer.</p>
+        </div>
+        <pre><code>composer config repositories.wpackagist composer https://wpackagist.org
+composer require composer/installers
+composer require wpackagist-plugin/vilahub-for-woocommerce:^1.0</code></pre>
+      </section>
+
+      <section class="faq">
+        <span class="eyebrow">ANTES DE INSTALAR</span>
+        <h2>Dúvidas frequentes</h2>
+        <details><summary>O plugin substitui o WooCommerce?</summary><p>Não. O WooCommerce continua sendo a loja. O plugin conecta a instalação ao serviço VilaHub para as operações de marketplace.</p></details>
+        <details><summary>Funciona sem uma conta VilaHub?</summary><p>Não para as operações de marketplace. O plugin é um cliente do serviço externo.</p></details>
+        <details><summary>A publicação é automática?</summary><p>Não. O envio exige revisão e confirmação explícita. A aprovação final pertence ao marketplace.</p></details>
+        <details><summary>O que acontece com os pedidos?</summary><p>Pedidos de marketplaces ficam em uma tela própria e não viram pedidos nativos do WooCommerce.</p></details>
+        <details><summary>Emissão fiscal é automática?</summary><p>Não. Documentos fiscais dependem do canal, da configuração e de uma ação específica de revisão.</p></details>
+      </section>
+
+      <section class="final-cta">
+        <span class="eyebrow">PLUGIN OFICIAL PARA WOOCOMMERCE</span>
+        <h2>Instale pelo diretório do WordPress.</h2>
+        <p>Versão 1.0.3, código GPL e suporte pelo fórum oficial do plugin.</p>
+        <div class="actions centered">
+          <a class="button primary" href="https://wordpress.org/plugins/vilahub-for-woocommerce/?utm_source=github-pages&amp;utm_medium=owned&amp;utm_campaign=woocommerce-plugin-launch&amp;utm_content=footer">Instalar agora</a>
+          <a class="button secondary" href="https://wordpress.org/support/plugin/vilahub-for-woocommerce/">Acessar suporte</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div><b>VilaHub para WooCommerce</b><p>Plugin oficial de código aberto para conectar a loja ao serviço VilaHub.</p></div>
+      <div><a href="https://github.com/vilabrasilmarketplace/vilahub-for-woocommerce">GitHub</a><a href="https://wpackagist.org/search?q=vilahub-for-woocommerce">WPackagist</a><a href="https://vilahub.com.br">VilaHub</a><a href="https://vilahub.com.br/termos">Termos</a><a href="https://vilahub.com.br/privacidade">Privacidade</a></div>
+    </footer>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "VilaHub for WooCommerce",
+        "softwareVersion": "1.0.3",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "WordPress",
+        "downloadUrl": "https://wordpress.org/plugins/vilahub-for-woocommerce/",
+        "isAccessibleForFree": true,
+        "license": "https://www.gnu.org/licenses/gpl-2.0.html",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"},
+        "softwareRequirements": "WordPress 6.5+, WooCommerce 9.0+, PHP 8.1+, HTTPS e conta VilaHub."
+      }
+    </script>
+  </body>
+</html>

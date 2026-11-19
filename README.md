@@ -6,6 +6,8 @@ Plugin oficial de código aberto para conectar uma loja WooCommerce ao serviço 
 
 [Instalar pelo WordPress.org](https://wordpress.org/plugins/vilahub-for-woocommerce/) · [Pacote no WPackagist](https://wpackagist.org/search?q=vilahub-for-woocommerce) · [VilaHub](https://vilahub.com.br) · [Suporte](https://wordpress.org/support/plugin/vilahub-for-woocommerce/)
 
+[Página pública do plugin](https://vilabrasilmarketplace.github.io/vilahub-for-woocommerce/)
+
 ## O que o plugin faz
 
 O WooCommerce continua sendo a loja e pode ser a origem do catálogo. O plugin adiciona o fluxo de autorização e operação de marketplaces:
