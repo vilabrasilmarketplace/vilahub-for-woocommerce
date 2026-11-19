@@ -4,7 +4,7 @@ Tags: integração, mercado livre, shopee, magalu, amazon
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -104,7 +104,18 @@ Deactivation stops scheduled tasks and preserves data. Disconnect first to revok
 
 Defining `VILAHUB_DELETE_DATA_ON_UNINSTALL` as `true` in `wp-config.php` permanently deletes local plugin tables/options during uninstall, including private orders and migration backups. Do not use it while operations are unresolved.
 
+== Screenshots ==
+
+1. The VilaHub start screen explains the connection between the WooCommerce store, marketplace accounts and explicit publication confirmation.
+2. WooCommerce product list with the VilaHub destination selector and restriction status column.
+3. Initial marketplace connection screen, hosted through the authorized VilaHub service.
+4. Separate marketplace orders screen with integration, status, fiscal, inventory and total columns.
+
 == Changelog ==
+
+= 1.0.2 =
+* Add the official plugin banner, high-resolution banner and real administration screenshots.
+* Document the available screens in the WordPress.org plugin gallery.
 
 = 1.0.1 =
 * Validate and sanitize administrative fiscal fields, item links, return quantities, identifiers and certificate input.
