@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Suporte oficial do plugin
+    url: https://wordpress.org/support/plugin/vilahub-for-woocommerce/
+    about: Instalação, configuração, conta VilaHub e uso do plugin no WordPress.
+  - name: Página do plugin no WordPress.org
+    url: https://wordpress.org/plugins/vilahub-for-woocommerce/
+    about: Download oficial, screenshots, requisitos e changelog.
+  - name: Central de ajuda VilaHub
+    url: https://vilahub.com.br/ajuda
+    about: Tutoriais de catálogo, marketplaces, pedidos, fiscal e equipe.

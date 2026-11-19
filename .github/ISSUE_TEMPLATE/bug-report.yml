@@ -1,0 +1,96 @@
+name: Relatar um problema
+description: Informe um comportamento reproduzível do plugin sem incluir credenciais ou dados de clientes.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por ajudar a melhorar o plugin. Remova nomes, e-mails, endereços, pedidos, tokens, senhas e certificados antes de enviar.
+
+        Para dúvidas de instalação ou configuração, use o fórum oficial do WordPress.org.
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Versão do plugin
+      description: Informe a versão exibida no WordPress ou no arquivo ZIP utilizado.
+      placeholder: "1.0.3"
+    validations:
+      required: true
+  - type: input
+    id: wordpress-version
+    attributes:
+      label: Versão do WordPress
+      placeholder: "6.5 ou superior"
+    validations:
+      required: true
+  - type: input
+    id: woocommerce-version
+    attributes:
+      label: Versão do WooCommerce
+      placeholder: "9.0 ou superior"
+    validations:
+      required: true
+  - type: input
+    id: php-version
+    attributes:
+      label: Versão do PHP
+      placeholder: "8.1 ou superior"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Como reproduzir
+      description: Descreva os passos na ordem em que o problema acontece.
+      placeholder: |
+        1. Abra ...
+        2. Selecione ...
+        3. Confirme ...
+        4. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Resultado esperado
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Resultado observado
+      description: Inclua a mensagem exibida, sem tokens ou dados pessoais.
+    validations:
+      required: true
+  - type: dropdown
+    id: channel
+    attributes:
+      label: Onde o problema ocorre?
+      options:
+        - Instalação ou autorização da loja
+        - Produtos e envio ao marketplace
+        - Conexão de conta de marketplace
+        - Pedidos de marketplace
+        - Estoque
+        - Configuração fiscal ou documentos
+        - Interface do WordPress
+        - Outro
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs ou captura relevantes
+      description: Opcional. Remova hostnames privados, cookies, tokens, credenciais e informações de compradores.
+      render: shell
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmação
+      options:
+        - label: Removi credenciais e dados pessoais ou de clientes deste relato.
+          required: true
+        - label: Entendo que a aprovação de anúncios e a disponibilidade de recursos dependem do marketplace e da conta conectada.
+          required: true
