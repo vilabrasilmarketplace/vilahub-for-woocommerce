@@ -14,7 +14,8 @@
 - [Código-fonte](https://github.com/vilabrasilmarketplace/vilahub-for-woocommerce): código e releases.
 - [WPackagist](https://wpackagist.org/search?q=vilahub-for-woocommerce): pacote `wpackagist-plugin/vilahub-for-woocommerce`.
 - [Suporte](https://wordpress.org/support/plugin/vilahub-for-woocommerce/).
-- [Demonstração no navegador](https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fvilabrasilmarketplace.github.io%2Fvilahub-for-woocommerce%2Fblueprint.json%3Fv%3D20261119): instalação temporária do WordPress com WooCommerce e VilaHub.
+- [Demonstração no navegador](https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fvilabrasilmarketplace.github.io%2Fvilahub-for-woocommerce%2Fblueprint.json%3Fv%3D20261120): instalação temporária do WordPress com WooCommerce e VilaHub.
+- [Guia de instalação e teste](https://vilahub.com.br/ajuda/plugin-woocommerce-instalacao): requisitos, autorização OAuth e primeiro envio controlado.
 - [VilaHub](https://vilahub.com.br).
 
 ## Funcionamento

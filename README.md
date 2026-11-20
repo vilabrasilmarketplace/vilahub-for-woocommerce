@@ -8,7 +8,7 @@ Plugin oficial de código aberto para conectar uma loja WooCommerce ao serviço 
 
 [Página pública do plugin](https://vilabrasilmarketplace.github.io/vilahub-for-woocommerce/)
 
-[Testar no WordPress Playground](https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fvilabrasilmarketplace.github.io%2Fvilahub-for-woocommerce%2Fblueprint.json%3Fv%3D20261119)
+[Testar no WordPress Playground](https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fvilabrasilmarketplace.github.io%2Fvilahub-for-woocommerce%2Fblueprint.json%3Fv%3D20261120)
 
 [Kit de imprensa e parcerias](https://github.com/vilabrasilmarketplace/vilahub-for-woocommerce/releases/download/v1.0.3/VilaHub-WooCommerce-Press-Kit-1.0.3.zip)
 
@@ -52,6 +52,19 @@ Depois da ativação:
 4. Revise um produto controlado antes de ampliar a sincronização.
 
 Não ative uma segunda cópia em outra pasta de plugin na mesma loja.
+
+## Primeiro teste em 15 minutos
+
+Use uma loja de homologação e mantenha a sincronização automática desligada:
+
+1. Confirme WordPress 6.5+, WooCommerce 9.0+, PHP 8.1+, HTTPS e faça backup.
+2. Instale e ative o plugin oficial.
+3. Abra `VilaHub > Início` e autorize a loja.
+4. Prepare um produto controlado com SKU exclusivo, estoque 5, preço conhecido e uma imagem.
+5. Escolha uma conta de teste, confirme um único envio e registre o resultado e o ID do anúncio.
+6. Atualize preço e estoque, sincronize duas vezes e confirme que a atualização não foi duplicada.
+
+O guia completo está em https://vilahub.com.br/ajuda/plugin-woocommerce-instalacao.
 
 ## Instalação por Composer
 

@@ -115,6 +115,15 @@ h1 { max-width: 680px; margin: 18px 0 22px; font-family: Georgia, "Times New Rom
 .process li b { color: #fff; font-size: 17px; }
 .process li p { margin: 4px 0 0; }
 .channel-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.pilot { display: grid; grid-template-columns: .85fr 1.15fr; gap: 55px; width: min(1180px, calc(100% - 40px)); margin: 10px auto 90px; padding: 48px; color: #fff; background: linear-gradient(135deg, #062844, #075f72); border-radius: 26px; box-shadow: 0 24px 60px rgba(7, 49, 85, .16); }
+.pilot h2 { margin: 14px 0 18px; color: #fff; font-family: Georgia, "Times New Roman", serif; font-size: clamp(32px, 3.8vw, 48px); letter-spacing: -.025em; }
+.pilot p { color: #bed8e3; font-size: 17px; }
+.pilot ol { display: grid; align-content: center; gap: 0; margin: 0; padding: 0; list-style: none; }
+.pilot li { display: grid; grid-template-columns: 38px 1fr; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.15); }
+.pilot li > span { display: grid; place-items: center; width: 34px; height: 34px; color: var(--navy); background: #67e1df; border-radius: 50%; font-weight: 900; }
+.pilot li b { color: #fff; font-size: 16px; }
+.pilot li p { margin: 3px 0 0; font-size: 14px; line-height: 1.55; }
+.pilot .button.secondary { color: #fff; background: transparent; border-color: rgba(255,255,255,.35); }
 .composer { display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: 50px; padding: 65px max(20px, calc((100vw - 1180px) / 2)); color: #fff; background: var(--navy); }
 .composer h2 { color: #fff; }
 .composer p { color: #bed4e2; }
@@ -137,7 +146,7 @@ footer a { color: #3d6681; font-size: 14px; text-decoration: none; }
 
 @media (max-width: 900px) {
   .site-header nav { display: none; }
-  .hero, .process, .composer, .partner-path { grid-template-columns: 1fr; }
+  .hero, .process, .composer, .partner-path, .pilot { grid-template-columns: 1fr; }
   .hero { gap: 40px; }
   .requirements { grid-template-columns: repeat(3, 1fr); }
   .requirements span:nth-child(3) { border-right: 0; }
@@ -146,7 +155,7 @@ footer a { color: #3d6681; font-size: 14px; text-decoration: none; }
 }
 
 @media (max-width: 620px) {
-  .site-header, .hero, .requirements, .section, .screens, .faq, .partner-path, .final-cta { width: min(100% - 28px, 1240px); }
+  .site-header, .hero, .requirements, .section, .screens, .faq, .partner-path, .pilot, .final-cta { width: min(100% - 28px, 1240px); }
   .brand span { display: none; }
   .hero { padding-top: 48px; }
   h1 { font-size: 46px; }
@@ -161,7 +170,7 @@ footer a { color: #3d6681; font-size: 14px; text-decoration: none; }
   .feature-grid article { min-height: 0; padding: 24px 22px 24px 74px; }
   .feature-grid article > span { left: 22px; top: 25px; }
   .process, .composer { padding: 60px 20px; }
-  .partner-path { padding: 34px 22px; gap: 28px; }
+  .partner-path, .pilot { padding: 34px 22px; gap: 28px; }
   .final-cta { padding: 42px 22px; }
   footer { grid-template-columns: 1fr; }
   footer div:last-child { justify-content: flex-start; }

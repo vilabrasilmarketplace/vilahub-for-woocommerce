@@ -36,6 +36,7 @@
       <nav aria-label="Navegação principal">
         <a href="#funcionalidades">Funcionalidades</a>
         <a href="#como-funciona">Como funciona</a>
+        <a href="#primeiro-teste">Primeiro teste</a>
         <a href="#composer">Composer</a>
         <a href="#agencias">Agências</a>
         <a href="https://wordpress.org/support/plugin/vilahub-for-woocommerce/">Suporte</a>
@@ -52,7 +53,7 @@
           <div class="actions">
             <a class="button primary" href="https://wordpress.org/plugins/vilahub-for-woocommerce/?utm_source=github-pages&amp;utm_medium=owned&amp;utm_campaign=woocommerce-plugin-launch&amp;utm_content=hero">Instalar pelo WordPress.org</a>
             <a class="button secondary" href="#como-funciona">Ver como funciona</a>
-            <a class="button secondary" href="https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fvilabrasilmarketplace.github.io%2Fvilahub-for-woocommerce%2Fblueprint.json%3Fv%3D20261119">Testar no navegador</a>
+            <a class="button secondary" href="https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fvilabrasilmarketplace.github.io%2Fvilahub-for-woocommerce%2Fblueprint.json%3Fv%3D20261120">Testar no navegador</a>
           </div>
           <div class="badges">
             <span>Gratuito no diretório</span>
@@ -124,6 +125,25 @@
         <div class="channel-list" role="list" aria-label="Marketplaces com telas de conexão">
           <span role="listitem">Mercado Livre</span><span role="listitem">Shopee</span><span role="listitem">Magalu</span><span role="listitem">Amazon</span><span role="listitem">TikTok Shop</span><span role="listitem">VilaBrasil</span><span role="listitem">SHEIN</span><span role="listitem">Netshoes</span><span role="listitem">MadeiraMadeira</span><span role="listitem">Americanas/SkyHub</span><span role="listitem">Leroy Merlin</span>
         </div>
+      </section>
+
+      <section class="pilot" id="primeiro-teste">
+        <div>
+          <span class="eyebrow">TESTE CONTROLADO EM 15 MINUTOS</span>
+          <h2>Valide o primeiro envio antes de ampliar o catálogo.</h2>
+          <p>Use uma loja de homologação, mantenha a sincronização automática desligada e confirme cada efeito antes de repetir o processo em produção.</p>
+          <div class="actions">
+            <a class="button primary" href="https://vilahub.com.br/ajuda/plugin-woocommerce-instalacao?utm_source=github-pages&amp;utm_medium=owned&amp;utm_campaign=woocommerce-plugin-launch&amp;utm_content=pilot-guide">Abrir o guia de instalação</a>
+            <a class="button secondary" href="https://wordpress.org/support/plugin/vilahub-for-woocommerce/">Relatar uma dúvida</a>
+          </div>
+        </div>
+        <ol>
+          <li><span>1</span><div><b>Confirme o ambiente</b><p>WordPress 6.5+, WooCommerce 9.0+, PHP 8.1+, HTTPS e backup.</p></div></li>
+          <li><span>2</span><div><b>Autorize uma loja</b><p>Abra VilaHub &gt; Início e confirme empresa, URL e instalação.</p></div></li>
+          <li><span>3</span><div><b>Use um produto controlado</b><p>SKU exclusivo, estoque 5, preço conhecido e uma imagem.</p></div></li>
+          <li><span>4</span><div><b>Publique uma amostra</b><p>Escolha uma conta de teste, revise os dados e confirme apenas um envio.</p></div></li>
+          <li><span>5</span><div><b>Teste repetição</b><p>Atualize preço e estoque e sincronize duas vezes para verificar idempotência.</p></div></li>
+        </ol>
       </section>
 
       <section class="composer" id="composer">
@@ -227,6 +247,19 @@ composer require wpackagist-plugin/vilahub-for-woocommerce:^1.0</code></pre>
                 "name": "Emissão fiscal é automática?",
                 "acceptedAnswer": {"@type": "Answer", "text": "Não. Documentos fiscais dependem do canal, da configuração e de uma ação específica de revisão."}
               }
+            ]
+          },
+          {
+            "@type": "HowTo",
+            "@id": "https://vilabrasilmarketplace.github.io/vilahub-for-woocommerce/#pilot",
+            "name": "Testar o plugin VilaHub para WooCommerce em uma loja de homologação",
+            "description": "Checklist para validar autorização, publicação de um produto controlado e repetição de atualização antes de usar o plugin em escala.",
+            "step": [
+              {"@type": "HowToStep", "name": "Confirmar o ambiente", "text": "Use WordPress 6.5 ou superior, WooCommerce 9.0 ou superior, PHP 8.1 ou superior, HTTPS e faça backup."},
+              {"@type": "HowToStep", "name": "Autorizar uma loja", "text": "Abra VilaHub > Início e confirme empresa, URL e instalação."},
+              {"@type": "HowToStep", "name": "Preparar um produto controlado", "text": "Use SKU exclusivo, estoque 5, preço conhecido e uma imagem."},
+              {"@type": "HowToStep", "name": "Publicar uma amostra", "text": "Escolha uma conta de teste, revise os dados e confirme apenas um envio."},
+              {"@type": "HowToStep", "name": "Testar repetição", "text": "Atualize preço e estoque e sincronize duas vezes para verificar idempotência."}
             ]
           }
         ]
