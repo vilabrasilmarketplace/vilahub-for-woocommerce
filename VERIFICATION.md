@@ -1,73 +1,45 @@
-# Verificação da versão 1.0.3
+# Verificação da versão 1.0.4
 
-Data: 19/11/2026  
-Ambiente: WordPress isolado em Docker, sem dados de clientes.
+Data: 20/11/2026
 
-## Versões do ambiente
+## Escopo
 
-- WordPress: 7.1.4.
-- WooCommerce: 11.3.0.
-- PHP: 8.3.36.
-- Plugin anterior: 1.0.1 ativo.
-- Pacote usado: `https://downloads.wordpress.org/plugin/vilahub-for-woocommerce.1.0.3.zip`.
+A versão 1.0.4 altera somente metadados de distribuição, documentação e descoberta:
 
-## Instalação
+- homepage oficial do plugin;
+- README-base em inglês;
+- tags do diretório;
+- perguntas frequentes;
+- links para os guias de marketplace;
+- versão e changelog.
 
-O pacote oficial foi instalado com substituição da versão anterior e ativação:
+As classes PHP e o comportamento funcional permanecem iguais aos da versão 1.0.3.
 
-```text
-Downloading installation package...
-Unpacking the package...
-Installing the plugin...
-Removing the old version of the plugin...
-Plugin updated successfully.
-Activating 'vilahub-for-woocommerce'...
-Success: Installed 1 of 1 plugins.
-```
+## Pacote oficial
 
-## Resultado
+- URL: `https://downloads.wordpress.org/plugin/vilahub-for-woocommerce.1.0.4.zip`
+- Arquivos: 38
+- SHA-256 do ZIP oficial: `03609b01c2371dca6dc27776f545f9ad82833a184be450c6d6b259c5927ea0b9`
+- SHA-256 do pacote gerado para o GitHub: `9a7513f609227767d131599e686cd77498739861bb9f232f1e4c9371f5fe4f12`
 
-```json
-{
-  "name": "vilahub-for-woocommerce",
-  "version": "1.0.3",
-  "status": "active",
-  "requires_php": "8.1",
-  "requires_plugins": "woocommerce"
-}
-```
+Os ZIPs possuem metadados de arquivo diferentes, mas os 38 arquivos internos possuem conteúdo idêntico.
 
-O teste de carregamento retornou:
+## Validação técnica
 
-```text
-1.0.3|woocommerce-ok|plugin-ok
-```
+- Os 17 arquivos PHP passaram em `php -l` usando PHP 8.3.
+- O cabeçalho declara `Version: 1.0.4`.
+- `VILAHUB_WC_VERSION` está em `1.0.4`.
+- `Plugin URI` aponta para `https://vilahub.com.br/woocommerce`.
+- O `readme.txt` declara `Stable tag: 1.0.4`.
+- O diretório público retorna a versão 1.0.4, a homepage correta e a FAQ.
+- A API oficial lista as tags `woocommerce`, `mercado-livre`, `shopee`, `magalu` e `amazon`.
 
-## Ciclo de ativação
+## Publicação
 
-A desativação e a reativação foram concluídas:
-
-```text
-Plugin 'vilahub-for-woocommerce' deactivated.
-Success: Deactivated 1 of 1 plugins.
-Plugin 'vilahub-for-woocommerce' activated.
-Success: Activated 1 of 1 plugins.
-```
-
-## Checksums
-
-O WordPress.org confirmou os arquivos oficiais:
-
-```text
-Success: Verified 1 of 1 plugins.
-```
+- Revisão do trunk: `3812928`.
+- Tag `1.0.4`: revisão `3812929`.
+- Release GitHub: `v1.0.4`.
 
 ## Conclusão
 
-- O ZIP oficial instala e substitui a versão anterior.
-- A versão carregada é `1.0.3`.
-- O plugin permanece ativo com WooCommerce 11.3.0.
-- As classes principais e a constante de versão foram carregadas.
-- Desativação e reativação não geraram erro.
-- Nenhum `debug.log` foi criado durante o teste.
-
+A versão foi publicada com sucesso e o pacote oficial foi conferido contra o pacote da release. Não houve migração funcional de dados nem alteração nas integrações já instaladas.
