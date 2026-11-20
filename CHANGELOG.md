@@ -1,5 +1,13 @@
 # Histórico de versões
 
+## 1.0.4
+
+- Corrige a homepage oficial do plugin para a landing do VilaHub para WooCommerce.
+- Publica o README-base do diretório em inglês para o fluxo de tradução do WordPress.org.
+- Adiciona perguntas frequentes e links para os guias de instalação por marketplace.
+- Substitui a tag genérica de integração pela tag WooCommerce.
+- Mantém o comportamento funcional da versão 1.0.3.
+
 ## 1.0.3
 
 - README padrão do WordPress.org em português do Brasil.

@@ -1,130 +1,165 @@
 === VilaHub – Marketplaces for WooCommerce ===
 Contributors: vilahub
-Tags: integração, mercado livre, shopee, magalu, amazon
+Tags: woocommerce, mercado livre, shopee, magalu, amazon
 Requires at least: 6.5
-Tested up to: 7.1
+Tested up to: 7.1.5
 Requires PHP: 8.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Conecte o WooCommerce ao Mercado Livre, Shopee, Magalu, Amazon, SHEIN e outros marketplaces. Gerencie produtos, pedidos, estoque e documentos fiscais.
+Connect WooCommerce to Mercado Livre, Shopee, Magalu, Amazon, SHEIN and other marketplaces. Manage products, orders, inventory and fiscal documents.
 
 == Description ==
 
-O VilaHub conecta o WooCommerce ao seu serviço externo de integração. No WordPress, você autoriza contas, configura preços, envia produtos, acompanha publicações e gerencia os pedidos de marketplaces compatíveis.
+VilaHub connects WooCommerce to its external integration service. From WordPress, authorized stores can connect marketplace accounts, configure prices, send products, review publication results and manage supported marketplace orders.
 
-* Autorização OAuth explícita com PKCE, sem compartilhar a senha do WordPress.
-* Seleção de produtos, escolha da conta de destino, revisão de preço e confirmação explícita da publicação.
-* Transmissão em segundo plano de produtos, variações, preços, estoque, imagens e atributos.
-* Acompanhamento do status de publicação, validação do canal e correções de categoria ou atributos suportadas.
-* Tela separada para pedidos de marketplaces; vendas importadas não são pedidos nativos do WooCommerce.
-* Autoridade de estoque definida entre WooCommerce e ERP externo, com deduções locais idempotentes.
-* Documentos fiscais e etiquetas suportados sempre por trás de uma ação separada do usuário.
-* Telas fiscal, financeira e de suporte do plugin vinculadas à empresa autorizada no VilaHub.
+* Explicit OAuth authorization with PKCE, without sharing the WordPress password.
+* Product selection, destination-account confirmation, price review and explicit publication confirmation.
+* Background transmission of products, variations, prices, inventory, images and supported attributes.
+* Publication status, marketplace validation and supported category or attribute correction.
+* A separate marketplace-order area; imported marketplace sales are not native WooCommerce orders.
+* Inventory authority can be set to WooCommerce or a connected ERP, with idempotent local deductions when applicable.
+* Fiscal documents and shipping labels remain behind a separate user action.
+* Fiscal, billing and support screens remain linked to the authorized VilaHub company.
 
-Requer WooCommerce 9.0+, WordPress 6.5+, PHP 8.1+, OpenSSL, HTTPS e uma conta VilaHub. A interface está em português do Brasil. HPOS e o armazenamento legado são compatíveis.
+VilaHub for WooCommerce requires WooCommerce 9.0+, WordPress 6.5+, PHP 8.1+, OpenSSL, HTTPS and a VilaHub account. The plugin interface is available in Brazilian Portuguese. HPOS and legacy WooCommerce storage are supported.
 
-= Serviço externo e transmissão de dados =
+Documentation and installation:
 
-O plugin depende do VilaHub para catálogo, conexões com marketplaces, fila de publicação, pedidos de marketplaces e serviços fiscais e de expedição suportados. Essas operações não funcionam offline.
+* https://vilahub.com.br/woocommerce
+* https://vilahub.com.br/woocommerce-mercado-livre
+* https://vilahub.com.br/woocommerce-shopee
+* https://vilahub.com.br/woocommerce-amazon
 
-Endpoints do serviço: https://vilahub.com.br/api/v1 e https://vilahub.com.br/api/oauth. A autorização é hospedada em https://vilahub.com.br/conectar/woocommerce. As chamadas de API usam HTTPS; páginas oficiais de autorização de marketplace abrem somente quando o vendedor escolhe conectar uma conta.
+== External service and data transmission ==
 
-As informações são trocadas desta forma:
+The plugin depends on VilaHub for catalog management, marketplace connections, the publication queue, marketplace orders and supported fiscal or shipping services. These operations do not work offline.
 
-* A conexão envia a URL de callback, identificadores da instalação ou do cliente e parâmetros OAuth PKCE/state. Os tokens são criptografados localmente com chaves derivadas dos salts de segurança do WordPress. A autorização pode ser revogada, e autorizações antigas não recebem novos escopos silenciosamente.
-* A prévia de restrição de produto envia IDs, títulos, descrições e marcas em lotes limitados. Ela não publica produtos.
-* Um envio explícito ou uma sincronização habilitada pode transmitir SKU, título, descrição em texto simples, marca, GTIN, preço, estoque, dimensões, peso, tags, URLs de imagens públicas, variações, atributos, NCM/unidade quando configurados e identificadores locais de instalação ou operação.
-* A conexão de canal envia identificadores do vendedor ou da loja, documento da empresa quando informado e credenciais digitadas para provedores baseados em chave. Provedores OAuth usam o fluxo oficial. O plugin não baixa código executável do VilaHub.
-* Depois da permissão de pedidos e da ativação da conta, solicitações periódicas podem receber dados de comprador, contato e endereço, itens, totais, status de pagamento, atendimento e rastreamento, situação fiscal e referências de documentos. Os campos dependem do marketplace e ficam em tabelas privadas do plugin.
-* Ativação de pedidos, autoridade de estoque, confirmações, vínculos de produtos e ações explícitas de pedido, fiscal ou expedição são enviados ao VilaHub. Pedidos nativos da loja não são enviados por este recurso.
-* A configuração fiscal envia dados do emissor, endereço, contato, contador e tributos. Um administrador pode enviar um certificado A1 PFX/P12 com senha ou um XML de nota autorizado. Emissão, consulta, envio ao marketplace e solicitação de etiqueta usam o VilaHub e os provedores autorizados. Nenhuma nota é emitida apenas por abrir ou importar um pedido.
-* O financeiro solicita resumo de assinatura, uso, faturas, créditos e comissões de dropshipping. Pagamentos continuam na página autenticada do VilaHub; o plugin não coleta credenciais de cartão ou banco.
-* O chat de suporte envia a pergunta, a página e a versão do plugin e a URL da loja. A transferência humana envia o histórico e a identidade da conta. Nunca envie senhas, tokens, certificados ou credenciais bancárias pelo chat.
+Service endpoints: https://vilahub.com.br/api/v1 and https://vilahub.com.br/api/oauth. Connection authorization is hosted at https://vilahub.com.br/conectar/woocommerce. API calls use HTTPS. Official marketplace authorization pages open only after the merchant chooses to connect an account.
 
-O plugin não envia senhas do WordPress, credenciais de cartão ou banco nem listas de pedidos nativos da loja. Ele processa dados de compradores e dados fiscais conforme descrito; inclua isso nas práticas de privacidade da loja. Imagens públicas de produtos podem ser buscadas nas URLs fornecidas, com limite de dez URLs HTTPS e dez MB por imagem.
+Data is exchanged as follows:
 
-O suporte opcional pelo WhatsApp abre somente quando clicado e não recebe automaticamente dados de compradores ou pedidos.
+* Connection requests send the callback URL, installation or client identifiers, and OAuth PKCE/state parameters. Tokens are encrypted locally with keys derived from WordPress security salts. Authorization can be revoked, and older authorizations do not receive new scopes silently.
+* A product-restriction preview sends IDs, titles, descriptions and brands in limited batches. It does not publish products.
+* An explicit send or enabled synchronization may transmit SKU, title, plain-text description, brand, GTIN, price, inventory, dimensions, weight, tags, public image URLs, variations, attributes, NCM/unit when configured, and local installation or operation identifiers.
+* Channel connection requests send seller or store identifiers, company tax identifiers when provided, and credentials entered for providers based on keys. OAuth providers use their official flow. The plugin does not download executable code from VilaHub.
+* After order permission and account activation, periodic requests may receive buyer, contact and address data, items, totals, payment status, fulfillment and tracking, fiscal status and document references. The available fields depend on the marketplace and are stored in private plugin tables.
+* Enabling order import, choosing inventory authority, confirming links, and explicit order, fiscal or shipping actions are sent to VilaHub. Native WooCommerce orders are not sent through this marketplace-order feature.
+* Fiscal configuration sends issuer, address, contact, accountant and tax data. An administrator may send an A1 PFX/P12 certificate with its password or an authorized XML document. Document emission, lookup, marketplace submission and label requests use VilaHub and the authorized providers. No fiscal document is emitted merely by opening or importing an order.
+* Billing screens request subscription, usage, invoice, credit and dropshipping-commission summaries. Payments remain on the authenticated VilaHub site; the plugin does not collect card or banking credentials.
+* Support chat sends the question, page, plugin version and store URL. A transfer to human support sends the conversation history and account identity. Never send passwords, tokens, certificates or banking credentials through chat.
 
-* Serviço: https://vilahub.com.br
-* Termos: https://vilahub.com.br/termos
-* Privacidade: https://vilahub.com.br/privacidade
-* Planos: https://vilahub.com.br/planos
-* Documentação da API: https://vilahub.com.br/api/v1/docs
+The plugin does not send WordPress passwords, card or banking credentials, or lists of native WooCommerce orders. It processes buyer and fiscal data as described above; include this flow in the store privacy policy. Public product images may be fetched from supplied HTTPS URLs, limited to ten URLs and ten MB per image.
 
-= Código-fonte, ativos e compilação =
+Optional WhatsApp support opens only after a click and does not automatically receive buyer or order data.
 
-O código-fonte legível completo está incluído neste pacote. PHP, JavaScript, CSS e ativos vetoriais são distribuídos como arquivos de origem. Nenhum código compilado, gerado, ofuscado ou minificado é necessário em execução. O pacote não exige instalação de dependências nem etapa de compilação: os arquivos deste diretório são os arquivos distribuídos e mantidos.
+* Service: https://vilahub.com.br
+* Terms: https://vilahub.com.br/termos
+* Privacy: https://vilahub.com.br/privacidade
+* Plans: https://vilahub.com.br/planos
+* API documentation: https://vilahub.com.br/api/v1/docs
 
-= Planos e integrações =
+== Source code and assets ==
 
-O serviço externo possui um plano Free permanente, com até dez produtos e uma integração ativa por empresa, um teste Full de trinta dias quando elegível e uso pago conforme os termos vigentes. As cotas pertencem à empresa, não apenas a esta loja.
+The complete readable source code is included in the distributed package. PHP, JavaScript, CSS and vector assets are distributed as source files. No compiled, generated, obfuscated or minified code is required at runtime. The package has no dependency-installation or build step: the files in the package are the maintained files.
 
-O ecossistema mais amplo do VilaHub inclui Mercado Livre, Magalu, Shopee, VilaBrasil/Medusa, Amazon, TikTok Shop, MadeiraMadeira, Leroy Merlin, Netshoes/Zattini, Americanas/B2W, SHEIN, Carrefour, AliExpress, Dafiti, Bling, ERP TINY/Olist, Omie, WooCommerce, Loja Integrada, Nuvemshop, Shopify e Tray. Recursos, aprovação e disponibilidade variam por provedor e conta. Esta lista não promete operações idênticas nem um conector direto no plugin para todos os serviços.
+== Plans and integrations ==
 
-= Operações suportadas =
+The external service includes a permanent Free plan with up to ten products and one active integration per company, a 30-day Full trial when eligible, and paid use under current terms. Limits apply to the VilaHub company, not only to this store.
 
-Existem telas de conexão para Mercado Livre, Shopee, Magalu, Amazon, TikTok Shop, VilaBrasil, SHEIN, Netshoes, MadeiraMadeira, Americanas/SkyHub e Leroy Merlin. A recepção de pedidos de marketplace é oferecida atualmente para Mercado Livre, Magalu, Shopee, TikTok Shop, VilaBrasil e MadeiraMadeira depois da ativação de cada conta.
+The wider VilaHub ecosystem includes Mercado Livre, Magalu, Shopee, VilaBrasil/Medusa, Amazon, TikTok Shop, MadeiraMadeira, Leroy Merlin, Netshoes/Zattini, Americanas/B2W, SHEIN, Carrefour, AliExpress, Dafiti, Bling, ERP TINY/Olist, Omie, WooCommerce, Loja Integrada, Nuvemshop, Shopify, Yampi and Tray. Features, approval and availability vary by provider and account. This list does not promise identical operations or a direct plugin connector for every service.
 
-* Magalu: configuração de perfil fiscal e A1, prévia, emissão direta para CRT 1, consulta, XML externo autorizado, envio, XML/DANFE e etiquetas disponíveis. Outros regimes usam XML externo autorizado quando suportado.
-* Mercado Livre: PDF de etiqueta oficial sujeito às verificações de expedição e disponibilidade de impressão. O envio de nota fiscal não faz parte deste fluxo.
-* TikTok Shop: consulta de pacote, XML autorizado validado e documentos de expedição quando liberados pelo canal. Agrupamentos ou despachos não suportados permanecem no Seller Center.
-* Shopee, VilaBrasil e MadeiraMadeira: informações e documentos do pedido fornecidos pelo serviço; esta versão não adiciona uma ação fiscal ou de etiqueta genérica.
+== Supported operations ==
 
-Mercado Livre e Shopee oferecem preparação de categoria e atributos quando suportada. Conectar Amazon, SHEIN ou Leroy Merlin não cria um publicador genérico em lote. Credenciais do provedor, aprovação da conta e regras do canal sempre se aplicam.
+Connection screens are available for Mercado Livre, Shopee, Magalu, Amazon, TikTok Shop, VilaBrasil, SHEIN, Netshoes, MadeiraMadeira, Americanas/SkyHub and Leroy Merlin. Marketplace order receiving is currently offered for Mercado Livre, Magalu, Shopee, TikTok Shop, VilaBrasil and MadeiraMadeira after each account is activated.
+
+* Magalu: fiscal profile and A1 configuration, preview, direct emission for CRT 1, lookup, authorized external XML, submission, XML/DANFE and available labels. Other tax regimes use authorized external XML when supported.
+* Mercado Livre: official shipping-label PDF subject to fulfillment and printing-availability checks. Fiscal document submission is not part of this flow.
+* TikTok Shop: package lookup, validated authorized XML and shipping documents when released by the channel. Unsupported grouping or dispatch remains in Seller Center.
+* Shopee, VilaBrasil and MadeiraMadeira: order information and documents supplied by the service; this version does not add a generic fiscal or shipping-label action.
+
+Mercado Livre and Shopee offer category and attribute preparation when supported. Connecting Amazon, SHEIN or Leroy Merlin does not create a generic bulk publisher. Provider credentials, account approval and channel rules always apply.
 
 == Installation ==
 
-1. Instale o WooCommerce e ative o VilaHub.
-2. Abra VilaHub > Início, escolha Começar, entre ou crie a conta do serviço, confirme a empresa e autorize a loja.
-3. Use VilaHub > Conectar Canal de Venda para autorizar uma conta; gerencie-a em Minhas Integrações.
-4. Em Produtos > Todos os produtos, selecione os itens, escolha Enviar para marketplace, defina o destino, aplique, revise os preços e confirme.
-5. Confira o resultado em VilaHub > Produtos publicados.
-6. Em VilaHub > Pedidos, configure a recepção, ative a conta e escolha WooCommerce ou ERP como autoridade de estoque. Reautorize se a conexão antiga não tiver os escopos necessários.
-7. Gerencie pedidos de marketplaces, vínculos de itens, pendências de estoque e documentos disponíveis na tela separada de pedidos.
+1. Install WooCommerce and activate VilaHub.
+2. Open VilaHub > Home, choose Start, sign in to or create the service account, confirm the company and authorize the store.
+3. Use VilaHub > Connect Sales Channel to authorize an account; manage connected accounts in My Integrations.
+4. In Products > All Products, select items, choose Send to Marketplace, select the destination, apply, review prices and confirm.
+5. Review results in VilaHub > Published Products.
+6. In VilaHub > Orders, configure receiving, activate the account and choose WooCommerce or an ERP as inventory authority. Reauthorize if an older connection does not include the required scopes.
+7. Manage marketplace orders, item links, inventory exceptions and available documents in the separate marketplace-order screen.
 
-Não é necessário informar uma chave REST do WooCommerce nem a senha do WordPress. Chaves manuais antigas do VilaHub continuam compatíveis. Nunca ative uma segunda cópia em outra pasta de plugin na mesma loja.
+You do not need to enter a WooCommerce REST key or the WordPress password. Older VilaHub manual keys remain compatible. Never activate a second copy from another plugin folder on the same store.
 
-== Important behavior ==
+== Frequently Asked Questions ==
 
-Preços usam BRL e o estoque usa quantidades inteiras. Não há conversão de moeda, invenção de dados fiscais nem rateio fracionado. Produtos e variações precisam de SKUs distintos e estoque próprio; quantidade negativa é enviada como zero. A API aceita até 100 variações e dois atributos por variação, substituindo a lista inteira de variações. Vínculos de SKU já existentes exigem aprovação explícita antes da primeira atualização transmitida. Uma sincronização bem-sucedida do catálogo não significa que o anúncio foi publicado no marketplace.
+= Does VilaHub replace WooCommerce? =
 
-As filas usam lotes limitados, identificadores persistentes de operação e novas tentativas. O cron do WordPress e o Action Scheduler do WooCommerce precisam estar funcionando; lojas com pouco tráfego podem precisar de um agendador no servidor.
+No. WooCommerce remains the store and can remain the catalog source. VilaHub adds a connected marketplace workflow for authorized accounts.
 
-Pedidos de marketplaces permanecem separados dos pedidos nativos do WooCommerce. Com o WooCommerce como autoridade de estoque, o estoque vinculado é alterado pela API de produtos e observadores podem ver a mudança. Com um ERP como autoridade, o plugin não faz dedução local. Deduções de pedidos pagos e cancelamentos antes do despacho são idempotentes. Vendas antigas ou sem data exigem confirmação explícita. Estornos ou mercadorias já despachadas nunca devolvem estoque automaticamente; confirme somente quantidades recebidas fisicamente. O plugin não emite estornos financeiros do marketplace.
+= Can I connect WooCommerce to Mercado Livre? =
 
-Ações fiscais exigem capacidade do canal, configuração e revisão do usuário. Um resultado incerto é consultado em vez de transmitido novamente de forma automática. A homologação real com provedor ou SEFAZ é separada dos testes sintéticos.
+Yes. Connect the store through the official plugin and authorize the Mercado Livre account through the marketplace flow. Product selection, price review and publication confirmation remain explicit.
 
-Cada instalação fica vinculada à empresa, às credenciais e à URL da loja autorizadas. Uma origem clonada bloqueia a sincronização até ser revisada. A ativação de rede no multisite não é suportada; ative por site. Alterar os salts de segurança do WordPress exige reconectar.
+= Can I connect WooCommerce to Shopee? =
 
-== Removal ==
+Yes. WooCommerce products can be prepared for Shopee categories, attributes and variations. Start with a controlled product sample and confirm prices, inventory and publication results.
 
-A desativação interrompe tarefas agendadas e preserva os dados. Desconecte primeiro para revogar a autorização remota; a desinstalação não solicita exclusão remota. Por padrão, a desinstalação mantém vínculos, pedidos privados de marketplaces, registros de estoque e backups de migração para recuperação, além de remover segredos locais e pausar a sincronização. Produtos e pedidos nativos comuns não são excluídos.
+= Which marketplaces are supported? =
 
-Definir `VILAHUB_DELETE_DATA_ON_UNINSTALL` como `true` no `wp-config.php` exclui permanentemente tabelas e opções locais do plugin durante a desinstalação, incluindo pedidos privados e backups de migração. Não use essa opção enquanto houver operações pendentes.
+The directory listing presents Mercado Livre, Shopee, Magalu and Amazon as primary search tags. VilaHub also exposes connection screens for TikTok Shop, VilaBrasil, SHEIN, Netshoes, MadeiraMadeira, Americanas/SkyHub and Leroy Merlin. Availability depends on the account, provider and plan.
+
+= Do I need a VilaHub account? =
+
+Yes for marketplace operations. The WordPress plugin is free and GPL, but it is a client of the external VilaHub service and requires an authorized company account.
+
+= Does the plugin work offline? =
+
+No. Marketplace authorization, publication, order receiving and supported fiscal or shipping operations require VilaHub and the relevant provider.
+
+= Are fiscal documents emitted automatically? =
+
+No. Fiscal and shipping actions depend on channel capability, configuration and a separate user confirmation.
+
+= Where can I find installation help? =
+
+Visit https://vilahub.com.br/ajuda/plugin-woocommerce-instalacao for the installation and first-test guide.
 
 == Screenshots ==
 
-1. A tela inicial do VilaHub explica a conexão entre a loja WooCommerce, as contas de marketplace e a confirmação explícita da publicação.
-2. Lista de produtos do WooCommerce com o seletor de destino VilaHub e a coluna de status de restrição.
-3. Tela inicial de conexão de marketplace, hospedada pelo serviço VilaHub autorizado.
-4. Tela separada de pedidos de marketplaces com colunas de integração, status, fiscal, estoque e total.
+1. The VilaHub home screen explains the connection between the WooCommerce store, marketplace accounts and explicit publication confirmation.
+2. WooCommerce product list with the VilaHub destination selector and product-restriction status.
+3. Marketplace connection screen hosted by the authorized VilaHub service.
+4. Separate marketplace orders screen with integration, status, fiscal, inventory and total fields.
 
 == Changelog ==
 
+= 1.0.4 =
+* Updates the official plugin homepage to the WooCommerce integration landing page.
+* Adds an English directory README and preserves Portuguese through the WordPress.org translation system.
+* Adds frequently asked questions and contextual links to WooCommerce marketplace guides.
+* Replaces the generic integration tag with WooCommerce for directory discovery.
+* Keeps the functional behavior of version 1.0.3.
+
 = 1.0.3 =
-* Publica a apresentação do plugin no diretório em português do Brasil.
-* Mantém o mesmo comportamento funcional da versão 1.0.2.
+* Publishes the Portuguese presentation of the plugin in the WordPress.org directory.
+* Keeps the functional behavior of version 1.0.2.
 
 = 1.0.2 =
-* Adiciona o banner oficial, o banner em alta resolução e capturas reais da administração.
-* Documenta as telas disponíveis na galeria do WordPress.org.
+* Adds the official banner, high-resolution banner and real administration screenshots.
+* Documents screenshots available in the WordPress.org gallery.
 
 = 1.0.1 =
-* Valida e sanitiza campos fiscais administrativos, vínculos de itens, quantidades devolvidas, identificadores e entrada de certificado.
-* Limita o aviso de ativação às telas de Plugins e administração do VilaHub.
-* Distribui a interface de suporte como código legível e documenta que o plugin não possui etapa de compilação ou minificação.
+* Validates and sanitizes administrative fiscal fields, item links, returned quantities, identifiers and certificate input.
+* Limits activation notices to Plugins and VilaHub administration screens.
+* Distributes the support interface as readable code and documents that the plugin has no compilation or minification step.
 
 = 1.0.0 =
-Primeira versão pública.
+* Initial public release.
+
+== Upgrade Notice ==
+
+= 1.0.4 =
+Directory metadata and discovery update. No functional migration or configuration change is required.
