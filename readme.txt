@@ -4,7 +4,7 @@ Tags: woocommerce, mercado livre, shopee, magalu, amazon
 Requires at least: 6.5
 Tested up to: 7.1.5
 Requires PHP: 8.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -136,6 +136,12 @@ Visit https://vilahub.com.br/ajuda/plugin-woocommerce-instalacao for the install
 
 == Changelog ==
 
+= 1.0.5 =
+* Prevents repeated "start a new conversation" errors when the support chat token is missing.
+* Shows a single connection-required message and disables chat submission when the store is not connected to VilaHub.
+* Starts a new support conversation automatically when an existing token is unavailable.
+* Keeps marketplace, product, order, fiscal and billing behavior unchanged.
+
 = 1.0.4 =
 * Updates the official plugin homepage to the WooCommerce integration landing page.
 * Adds an English directory README and preserves Portuguese through the WordPress.org translation system.
@@ -160,6 +166,9 @@ Visit https://vilahub.com.br/ajuda/plugin-woocommerce-instalacao for the install
 * Initial public release.
 
 == Upgrade Notice ==
+
+= 1.0.5 =
+Fixes the support assistant state when the store connection is missing or a conversation token has expired.
 
 = 1.0.4 =
 Directory metadata and discovery update. No functional migration or configuration change is required.

@@ -1,5 +1,12 @@
 # Histórico de versões
 
+## 1.0.5
+
+- Corrige o assistente de suporte quando o token da conversa não está disponível.
+- Cria uma nova conversa automaticamente antes de enviar a mensagem.
+- Exibe uma única orientação de conexão e bloqueia novos envios quando a loja não está conectada ao VilaHub.
+- Mantém inalterados os fluxos de marketplaces, produtos, pedidos, fiscal e financeiro.
+
 ## 1.0.4
 
 - Corrige a homepage oficial do plugin para a landing do VilaHub para WooCommerce.

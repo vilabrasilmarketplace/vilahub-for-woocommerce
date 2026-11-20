@@ -1,45 +1,41 @@
-# Verificação da versão 1.0.4
+# Verificação da versão 1.0.5
 
 Data: 20/11/2026
 
 ## Escopo
 
-A versão 1.0.4 altera somente metadados de distribuição, documentação e descoberta:
+A versão 1.0.5 corrige o estado do assistente de suporte:
 
-- homepage oficial do plugin;
-- README-base em inglês;
-- tags do diretório;
-- perguntas frequentes;
-- links para os guias de marketplace;
-- versão e changelog.
-
-As classes PHP e o comportamento funcional permanecem iguais aos da versão 1.0.3.
-
-## Pacote oficial
-
-- URL: `https://downloads.wordpress.org/plugin/vilahub-for-woocommerce.1.0.4.zip`
-- Arquivos: 38
-- SHA-256 do ZIP oficial: `03609b01c2371dca6dc27776f545f9ad82833a184be450c6d6b259c5927ea0b9`
-- SHA-256 do pacote gerado para o GitHub: `9a7513f609227767d131599e686cd77498739861bb9f232f1e4c9371f5fe4f12`
-
-Os ZIPs possuem metadados de arquivo diferentes, mas os 38 arquivos internos possuem conteúdo idêntico.
+- recria automaticamente uma conversa quando o token local não está disponível;
+- evita a resposta repetida “Inicie uma nova conversa”;
+- exibe uma única orientação para conectar a loja quando a credencial VilaHub é inválida;
+- desabilita o envio pelo chat enquanto a loja não estiver conectada;
+- mantém inalterados os fluxos de marketplaces, produtos, pedidos, fiscal e financeiro.
 
 ## Validação técnica
 
-- Os 17 arquivos PHP passaram em `php -l` usando PHP 8.3.
-- O cabeçalho declara `Version: 1.0.4`.
-- `VILAHUB_WC_VERSION` está em `1.0.4`.
-- `Plugin URI` aponta para `https://vilahub.com.br/woocommerce`.
-- O `readme.txt` declara `Stable tag: 1.0.4`.
-- O diretório público retorna a versão 1.0.4, a homepage correta e a FAQ.
-- A API oficial lista as tags `woocommerce`, `mercado-livre`, `shopee`, `magalu` e `amazon`.
+- Os arquivos PHP passaram em `php -l` usando PHP 8.1.
+- O teste `tests/support-chat-test.php` confirmou a persistência do token e o estado `CONNECTION_REQUIRED`.
+- `assets/support-chat.js` passou em `node --check`.
+- O cabeçalho declara `Version: 1.0.5`.
+- `VILAHUB_WC_VERSION` está em `1.0.5`.
+- O `readme.txt` declara `Stable tag: 1.0.5`.
+- A API do WordPress.org responde com a versão 1.0.5.
+
+## Pacote oficial
+
+- URL: `https://downloads.wordpress.org/plugin/vilahub-for-woocommerce.1.0.5.zip`
+- Tamanho: 465.336 bytes.
+- Arquivos internos: 38.
+- SHA-256: `bedd238a8e3f72ac0b08afafe32f5db171a6156fc8b2312a43399d7042187114`.
+
+Os 38 arquivos do pacote oficial possuem conteúdo idêntico à tag `1.0.5` do SVN.
 
 ## Publicação
 
-- Revisão do trunk: `3812928`.
-- Tag `1.0.4`: revisão `3812929`.
-- Release GitHub: `v1.0.4`.
+- Revisão do trunk: `3812982`.
+- Tag `1.0.5`: revisão `3812983`.
 
 ## Conclusão
 
-A versão foi publicada com sucesso e o pacote oficial foi conferido contra o pacote da release. Não houve migração funcional de dados nem alteração nas integrações já instaladas.
+A correção foi publicada no diretório oficial do WordPress.org. Nenhuma instalação de cliente foi alterada e cada loja decide quando atualizar.

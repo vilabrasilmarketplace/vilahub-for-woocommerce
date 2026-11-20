@@ -6,8 +6,8 @@ A versão estável publicada no WordPress.org recebe correções de segurança. 
 
 | Versão | Suporte |
 | --- | --- |
-| 1.0.4 | Sim |
-| 1.0.3 e anteriores | Atualizar para 1.0.4 |
+| 1.0.5 | Sim |
+| 1.0.4 e anteriores | Atualizar para 1.0.5 |
 
 ## Como relatar
 
