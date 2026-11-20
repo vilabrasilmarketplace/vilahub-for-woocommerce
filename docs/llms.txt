@@ -4,7 +4,7 @@
 
 ## Versão atual
 
-- Versão estável: 1.0.5.
+- Versão estável: 1.0.6.
 - Licença: GPL-2.0-or-later.
 - Requisitos: WordPress 6.5+, WooCommerce 9.0+, PHP 8.1+, OpenSSL, HTTPS e uma conta VilaHub.
 

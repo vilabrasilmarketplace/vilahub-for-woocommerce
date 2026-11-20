@@ -1,5 +1,12 @@
 # Histórico de versões
 
+## 1.0.6
+
+- Libera o assistente de suporte antes da conexão da loja com o VilaHub.
+- Usa a conversa pública protegida por limite de requisições e mantém a base de conhecimento do plugin disponível.
+- Usa nome e e-mail do usuário do WordPress somente quando ele solicita transferência para o atendimento humano.
+- Mantém inalterados os fluxos de marketplaces, produtos, pedidos, fiscal e financeiro.
+
 ## 1.0.5
 
 - Corrige o assistente de suporte quando o token da conversa não está disponível.

@@ -7,13 +7,11 @@
     messages = document.getElementById("vilahub-support-messages"),
     form = document.getElementById("vilahub-support-form"),
     input = document.getElementById("vilahub-support-input"),
-    submit = form?.querySelector('button[type="submit"]'),
     transfer = document.getElementById("vilahub-support-transfer"),
     status = document.getElementById("vilahub-support-status");
   if (!widget || !launcher || !panel || !messages || !form) return;
   let loaded = false,
-    dragged = false,
-    unavailable = false;
+    dragged = false;
   const post = async (operation, extra = {}) => {
     const body = new FormData();
     body.append("action", "vilahub_support_chat");
@@ -35,15 +33,6 @@
       throw error;
     }
     return data.data;
-  };
-  const stopIfDisconnected = (error) => {
-    if (error?.code !== "CONNECTION_REQUIRED") return false;
-    unavailable = true;
-    input.disabled = true;
-    if (submit) submit.disabled = true;
-    if (transfer) transfer.hidden = true;
-    status.textContent = "";
-    return true;
   };
   const linkedText = (text) => {
     const value = String(text),
@@ -109,7 +98,6 @@
     } catch (error) {
       messages.innerHTML = "";
       add("ASSISTANT", error.message);
-      stopIfDisconnected(error);
     }
   };
   const placePanel = () => {
@@ -242,12 +230,10 @@
         : "";
     } catch (error) {
       add("ASSISTANT", error.message);
-      if (!stopIfDisconnected(error)) status.textContent = "";
+      status.textContent = "";
     } finally {
-      if (!unavailable) {
-        input.disabled = false;
-        input.focus();
-      }
+      input.disabled = false;
+      input.focus();
     }
   });
   transfer.addEventListener("click", async () => {
@@ -261,7 +247,7 @@
       transfer.hidden = true;
     } catch (error) {
       status.textContent = error.message;
-      if (!stopIfDisconnected(error)) transfer.disabled = false;
+      transfer.disabled = false;
     }
   });
 })();

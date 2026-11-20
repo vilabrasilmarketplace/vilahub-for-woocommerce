@@ -7,25 +7,45 @@ defined('ABSPATH') || exit;
 
 final class VilaHub_Support {
     private static function token_key(): string {return '_vilahub_support_chat_token';}
-    private static function start_conversation(VilaHub_Client $client, int $user): array {
+    private static function page_url(): string {
         // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
         $page=isset($_POST['page'])?wp_unslash($_POST['page']):'';
         $page=is_string($page)?sanitize_key($page):'';
-        $response=$client->request('POST','/plugin-support/start',array('page'=>$page,'version'=>VILAHUB_WC_VERSION,'site'=>home_url()),array('Idempotency-Key'=>wp_generate_uuid4()));
-        $token=(string)($response['data']['token']??'');
+        return admin_url('admin.php?page='.($page?:'vilahub'));
+    }
+    private static function public_request(string $method, string $path, ?array $body = null, array $headers = array()): array {
+        $args=array(
+            'method'=>$method,
+            'timeout'=>25,
+            'redirection'=>0,
+            'sslverify'=>true,
+            'limit_response_size'=>1048576,
+            'headers'=>array_merge(array('Accept'=>'application/json','User-Agent'=>'VilaHub-WooCommerce/'.VILAHUB_WC_VERSION),$headers),
+        );
+        if($body!==null){
+            $args['body']=wp_json_encode($body);
+            $args['headers']['Content-Type']='application/json';
+        }
+        $response=wp_safe_remote_request('https://vilahub.com.br/api'.$path,$args);
+        if(is_wp_error($response))throw new RuntimeException('Não foi possível conectar ao atendimento VilaHub.');
+        $status=(int)wp_remote_retrieve_response_code($response);
+        $data=json_decode(wp_remote_retrieve_body($response),true);
+        if($status<200||$status>=300){
+            $message=is_array($data)&&isset($data['message'])&&is_string($data['message'])?$data['message']:'O atendimento VilaHub recusou a solicitação.';
+            throw new RuntimeException($message,$status);
+        }
+        if(!is_array($data))throw new RuntimeException('O atendimento VilaHub retornou uma resposta inválida.');
+        return $data;
+    }
+    private static function start_conversation(int $user): array {
+        $response=self::public_request('POST','/support-ai/start',array('pageUrl'=>self::page_url()));
+        $token=(string)($response['token']??'');
         if(!$token)throw new RuntimeException('O atendimento não iniciou.');
         update_user_meta($user,self::token_key(),$token);
-        return array('token'=>$token,'conversation'=>$response['data']['conversation']??array());
+        return array('token'=>$token,'conversation'=>$response['conversation']??array());
     }
     private static function error_payload(Throwable $error): array {
-        $code=$error instanceof VilaHub_Api_Exception?$error->api_code:'SUPPORT_CHAT_ERROR';
-        if(in_array($code,array('INVALID_API_KEY','INVALID_API_CREDENTIAL','UNAUTHORIZED'),true)){
-            return array(
-                'code'=>'CONNECTION_REQUIRED',
-                'message'=>'Conecte esta loja ao VilaHub em Minhas Integrações para usar o assistente: '.admin_url('admin.php?page=vilahub-integrations'),
-            );
-        }
-        return array('code'=>$code,'message'=>VilaHub_Product::truncate($error->getMessage(),500));
+        return array('code'=>'SUPPORT_CHAT_ERROR','message'=>VilaHub_Product::truncate($error->getMessage(),500));
     }
     public static function boot(): void {
         add_action('admin_init',function(){if(sanitize_key(wp_unslash($_GET['page']??''))==='vilahub-support'){wp_safe_redirect(add_query_arg('vilahub_chat','1',admin_url('admin.php?page=vilahub')));exit;}});
@@ -50,15 +70,14 @@ final class VilaHub_Support {
         $operation=sanitize_key($raw_operation);
         $user=get_current_user_id();
         $token=(string)get_user_meta($user,self::token_key(),true);
-        $client=new VilaHub_Client();
         try{
             if($operation==='start'){
-                if($token){try{$response=$client->request('GET','/plugin-support/conversation',null,array('X-Support-Chat-Token'=>$token));wp_send_json_success($response['data']);}catch(Throwable $ignored){delete_user_meta($user,self::token_key());$token='';}}
-                $started=self::start_conversation($client,$user);
+                if($token){try{$response=self::public_request('GET','/support-ai/conversation',null,array('X-Support-Chat-Token'=>$token));wp_send_json_success($response);}catch(Throwable $ignored){delete_user_meta($user,self::token_key());$token='';}}
+                $started=self::start_conversation($user);
                 wp_send_json_success($started['conversation']);
             }
             if(!$token){
-                $started=self::start_conversation($client,$user);
+                $started=self::start_conversation($user);
                 $token=$started['token'];
             }
             if($operation==='message'){
@@ -68,9 +87,12 @@ final class VilaHub_Support {
                 $message=sanitize_textarea_field($raw_message);
                 $message_length=function_exists('mb_strlen')?mb_strlen($message):strlen($message);
                 if($message===''||$message_length>2000)throw new RuntimeException('A mensagem deve ter até 2.000 caracteres.');
-                wp_send_json_success($client->request('POST','/plugin-support/message',array('token'=>$token,'message'=>$message),array('Idempotency-Key'=>wp_generate_uuid4()))['data']);
+                wp_send_json_success(self::public_request('POST','/support-ai/message',array('message'=>$message),array('X-Support-Chat-Token'=>$token)));
             }
-            if($operation==='transfer'){wp_send_json_success($client->request('POST','/plugin-support/transfer',array('token'=>$token),array('Idempotency-Key'=>wp_generate_uuid4()))['data']);}
+            if($operation==='transfer'){
+                $current=wp_get_current_user();
+                wp_send_json_success(self::public_request('POST','/support-ai/transfer',array('name'=>$current->display_name,'email'=>$current->user_email),array('X-Support-Chat-Token'=>$token)));
+            }
             throw new RuntimeException('Operação inválida.');
         }catch(Throwable $e){wp_send_json_error(self::error_payload($e),400);}
     }
