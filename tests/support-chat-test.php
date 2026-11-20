@@ -1,7 +1,7 @@
 <?php
 
 define('ABSPATH', __DIR__ . '/');
-define('VILAHUB_WC_VERSION', '1.0.6');
+define('VILAHUB_WC_VERSION', '1.0.7');
 
 function wp_unslash($value) { return $value; }
 function sanitize_key($value) { return preg_replace('/[^a-z0-9_-]/', '', strtolower((string) $value)); }

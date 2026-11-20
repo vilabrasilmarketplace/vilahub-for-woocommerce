@@ -1,14 +1,14 @@
-=== VilaHub – Marketplaces for WooCommerce ===
+=== Integração WooCommerce: Mercado Livre, Shopee e Magalu – VilaHub ===
 Contributors: vilahub
-Tags: woocommerce, mercado livre, shopee, magalu, amazon
+Tags: mercado-livre, shopee, magalu, amazon, tiktok-shop
 Requires at least: 6.5
 Tested up to: 7.1.5
 Requires PHP: 8.1
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Connect WooCommerce to Mercado Livre, Shopee, Magalu, Amazon, SHEIN and other marketplaces. Manage products, orders, inventory and fiscal documents.
+Connect a WooCommerce store to Mercado Livre, Shopee, Magalu, Amazon, TikTok Shop, SHEIN and other marketplaces. Manage products, orders, inventory and fiscal documents.
 
 == Description ==
 
@@ -136,6 +136,12 @@ Visit https://vilahub.com.br/ajuda/plugin-woocommerce-instalacao for the install
 
 == Changelog ==
 
+= 1.0.7 =
+* Repositions the plugin name around WooCommerce and the supported sales channels.
+* Replaces the generic WooCommerce tag with specific marketplace terms.
+* Adds TikTok Shop as a directory tag while retaining Amazon.
+* Keeps plugin behavior unchanged from version 1.0.6.
+
 = 1.0.6 =
 * Enables the support assistant before the store is connected to VilaHub.
 * Uses the rate-limited public support conversation while keeping the full plugin knowledge base available.
@@ -172,6 +178,9 @@ Visit https://vilahub.com.br/ajuda/plugin-woocommerce-instalacao for the install
 * Initial public release.
 
 == Upgrade Notice ==
+
+= 1.0.7 =
+Directory name and discovery update. No migration or configuration change is required.
 
 = 1.0.6 =
 Allows the plugin support assistant to be used before the store is connected.

@@ -1,5 +1,12 @@
 # Histórico de versões
 
+## 1.0.7
+
+- Atualiza o nome do plugin para explicar a integração WooCommerce com canais de venda.
+- Substitui a tag genérica WooCommerce por termos específicos de marketplace.
+- Mantém Mercado Livre, Shopee, Magalu e Amazon e adiciona TikTok Shop.
+- Mantém o comportamento funcional da versão 1.0.6.
+
 ## 1.0.6
 
 - Libera o assistente de suporte antes da conexão da loja com o VilaHub.

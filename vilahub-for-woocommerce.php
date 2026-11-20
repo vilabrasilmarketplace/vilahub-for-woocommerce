@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: VilaHub – Marketplaces for WooCommerce
+ * Plugin Name: Integração WooCommerce: Mercado Livre, Shopee e Magalu – VilaHub
  * Plugin URI: https://vilahub.com.br/woocommerce
- * Description: Integração do WooCommerce com Mercado Livre, Shopee, Magalu, Amazon, SHEIN e outros marketplaces. Gerencie produtos, pedidos, estoque e NF-e.
- * Version: 1.0.6
+ * Description: Integração do WooCommerce com Mercado Livre, Shopee, Magalu, Amazon, TikTok Shop, SHEIN e outros marketplaces. Gerencie produtos, pedidos, estoque e NF-e.
+ * Version: 1.0.7
  * Author: VilaHub
  * Author URI: https://vilahub.com.br
  * License: GPL-2.0-or-later
@@ -17,7 +17,7 @@
  */
 
 defined('ABSPATH') || exit;
-define('VILAHUB_WC_VERSION', '1.0.6');
+define('VILAHUB_WC_VERSION', '1.0.7');
 define('VILAHUB_WC_FILE', __FILE__);
 
 foreach (array('store', 'client', 'product', 'sync', 'admin', 'oauth', 'marketplace', 'publications', 'welcome', 'published-products', 'order-record', 'order-migration', 'orders', 'order-admin', 'support') as $vilahub_class) {

@@ -1,10 +1,10 @@
-# VilaHub for WooCommerce
+# Integração WooCommerce: Mercado Livre, Shopee e Magalu – VilaHub
 
 > Plugin oficial de código aberto para conectar uma loja WooCommerce ao serviço VilaHub e organizar produtos, preços, estoque, publicações e pedidos de marketplaces compatíveis.
 
 ## Versão atual
 
-- Versão estável: 1.0.6.
+- Versão estável: 1.0.7.
 - Licença: GPL-2.0-or-later.
 - Requisitos: WordPress 6.5+, WooCommerce 9.0+, PHP 8.1+, OpenSSL, HTTPS e uma conta VilaHub.
 

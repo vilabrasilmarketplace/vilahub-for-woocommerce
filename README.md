@@ -1,4 +1,4 @@
-# VilaHub para WooCommerce
+# Integração WooCommerce: Mercado Livre, Shopee e Magalu – VilaHub
 
 ![Plugin oficial VilaHub para WooCommerce](docs/assets/banner.png)
 
@@ -106,7 +106,7 @@ O WPackagist espelha a versão estável publicada no WordPress.org.
 
 ## Código e versões
 
-Versão estável atual: **1.0.6**.
+Versão estável atual: **1.0.7**.
 
 - WordPress.org SVN: https://plugins.svn.wordpress.org/vilahub-for-woocommerce/
 - WPackagist: https://wpackagist.org/search?q=vilahub-for-woocommerce
